@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Dot Matrix';
+    src: url('DotMatrixBold.eot');
+    src: url('DotMatrixBold.eot?#iefix') format('embedded-opentype'),
+        url('DotMatrixBold.woff2') format('woff2'),
+        url('DotMatrixBold.woff') format('woff'),
+        url('DotMatrixBold.ttf') format('truetype'),
+        url('DotMatrixBold.svg#DotMatrixBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
