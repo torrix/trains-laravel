@@ -1,0 +1,37 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    container_name: trains
+    image: lamp
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
+
+  mysql:
+    container_name: trains-mysql
+    image: mysql:5.7
+    command: mysqld --sql_mode=""
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: trains
+      MYSQL_USER: trains
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+
+  phpmyadmin:
+    container_name: trains-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: trains
+      PMA_PASSWORD: secret
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - /sessions
