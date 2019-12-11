@@ -8,8 +8,6 @@ services:
     image: lamp
     ports:
       - 80:80
-    volumes:
-      - .:/var/www/html
 
   mysql:
     container_name: trains-mysql
